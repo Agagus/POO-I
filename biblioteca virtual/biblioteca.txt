@@ -1,0 +1,116 @@
+Consigna: Sistema de Biblioteca Virtual
+La biblioteca de la universidad quiere un sistema para gestionar los materiales que presta a los usuarios. Tu tarea será desarrollar este sistema en Python aplicando programación orientada a objetos.
+Objetivos de la práctica
+Aplicar encapsulamiento mediante atributos privados y getters/setters.
+
+
+Implementar herencia para modelar distintos tipos de materiales.
+
+
+Utilizar polimorfismo para que las clases respondan de forma diferente a un mismo método.
+
+
+Introducir composición para modelar la relación entre usuarios y los materiales que tienen prestados.
+
+
+
+Requisitos
+1. Clase base Material
+Debe tener los atributos privados:
+
+
+__titulo (str)
+
+
+__autor (str)
+
+
+__anio (int)
+
+
+Métodos:
+
+
+Getters (o property) para cada atributo (get_titulo, get_autor, get_anio) que sea necesario.
+
+
+__str__() → devuelve una representación genérica del material.
+
+
+
+2. Subclases de Material (Herencia)
+Crear al menos tres clases que hereden de Material:
+Libro
+
+
+Atributo adicional: __genero (str).
+
+
+__str__() → devuelve una cadena con título, autor, año y género.
+
+
+Revista
+
+
+Atributo adicional: __numero_edicion (int).
+
+
+__str__() → devuelve una cadena con título, autor, año y número de edición.
+
+
+DVD
+
+
+Atributo adicional: __duracion (int, en minutos).
+
+
+__str__() → devuelve una cadena con título, autor, año y duración.
+
+
+
+3. Clase Usuario (Composición)
+Un usuario puede tener materiales prestados.
+Atributos privados:
+
+
+__nombre (str)
+
+
+__materiales_prestados (lista de objetos Material).
+
+
+Métodos:
+
+
+prestar(material: Material) → agrega un material a la lista.
+
+
+devolver(material: Material) → quita el material de la lista.
+
+
+listar_materiales() → imprime todos los materiales prestados (debe usar el método __str__() de cada material).
+
+
+
+4. Polimorfismo
+Crear una función mostrar_informacion(material: Material) que reciba cualquier objeto Material (libro, revista o DVD) e imprima su información.
+
+
+Comprobar que se ejecuta la versión de __str__() correspondiente a cada tipo.
+
+
+
+5. Programa principal
+Crear al menos un Libro, una Revista y un DVD.
+
+
+Crear al menos dos Usuario.
+
+
+Prestar materiales a cada usuario.
+
+
+Mostrar los materiales que tiene prestados cada usuario.
+
+
+Usar la función mostrar_informacion() para recorrer e imprimir todos los materiales creados.
